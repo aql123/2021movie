@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load grav_tag %}
+{% block main_content %}
+    <div class="warp-content">
+        <div class="container-fluid">
+            <h1 align="center" style="margin-bottom: 20px">个人信息</h1>
+            <div class="thumbnail movie">
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-9 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <img CLASS="img-responsive img-rounded" src='{{ user.email|gravatar:"150" }}'>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <div class="row">
+                                    <p style="padding: 10px;margin-left: 5px;font-size: 20px">
+                                        用户名: {{ user.username }}
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p style="padding: 10px;margin-left: 5px;font-size: 20px">
+                                        邮箱: {{ user.email }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px">
+                            <div class="col-md-4">
+                                <h2><a style="padding: 10px; font-size: 30px" class="btn-lg btn-block btn-warning" href="{% url 'mycollect' %}">我的收藏</a>
+                                </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h2><a style="padding: 10px; font-size: 30px" class="btn-lg btn-block btn-info" href="{% url 'my_comments' %}">我的评论</a>
+                                </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h2><a style="padding: 10px; font-size: 30px" class="btn-lg btn-block btn-primary " href="{% url 'my_rate' %}">我的评分</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px">
+                    <div class="col-md-9 col-md-offset-1">
+                        <form action="{% url 'personal' %}" method='post' autocomplete="on">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {{ field.errors }}
+                                    {{ field }}
+                                </div>
+                            {% endfor %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="reset" class="btn-lg btn-block btn-danger ">重置</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn-lg btn-success btn-block">修改信息</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+
+{% block main_content %}
+                   <div class="wrap-content">
+                    <div class="movie">
+                        <div class="row type">
+                            <div class="title">
+                                <center><h2>搜索结果</h2></center>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {% for movie in index_list %}
+                                <div class="col-1-4">
+                                    <div class="wrap-col">
+                                        <div class="post">
+                                            <div class="view effect">
+                                                <img class="thumb" src="{{ MEDIA_URL }}{{ movie.image_link}}"/>
+                                                <div class="mask">
+                                                    <a href="{% url 'movie' movie.id %}" class="info" title="Full Image"><img src="{{ MEDIA_URL }}{{ movie.image_link}}"/></a>
+                                                </div>
+
+                                            </div>
+                                            {#									<div class="clear"></div>#}
+                                            <a href="{% url 'movie' movie.id %}"><h3>{{ movie.name }}</h3></a>
+                                            <span>{{ movie.years }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {% for movie in movies %}
+                                <div class="col-1-4">
+                                    <div class="wrap-col">
+                                        <div class="post">
+                                            <div class="view effect">
+                                                <img class="thumb" src="{{ MEDIA_URL }}{{ movie.image_link}}"/>
+                                                <div class="mask">
+                                                    <a href="{% url 'movie' movie.id %}" class="info" title="Full Image"><img src="{{ MEDIA_URL }}{{ movie.image_link}}"/></a>
+                                                </div>
+                                            </div>
+                                            <div class="clear"></div>
+                                            <a href=" {% url 'movie' movie.id %}"><h3>{{ movie.name }}</h3></a>
+                                            <span>{{ movie.years }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <center></center>
+                    </div>
+                </div>
+{% endblock %}

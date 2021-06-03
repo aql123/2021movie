@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb530e86-d860-40ed-90d4-99e718329563" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/readme.txt" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JupyterTrust" id="3e82b149-c702-45ef-96fc-98e0f4fd238e" />
+  <component name="ProjectId" id="1nerehg0CXfERyXRl7lmKsste6r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\2021movie\movie_it" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="Test: " type="DjangoTestsConfigurationType" temporary="true">
+      <module name="movie1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python">
+      <module name="movie1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\2021movie\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="populate_user_rate" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="movie1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/populate_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/populate_data/populate_user_rate.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="movie1" type="Python.DjangoServer" factoryName="Django server">
+      <module name="movie1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.movie1" />
+      <item itemvalue="Django tests.Test: " />
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python.populate_user_rate" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: " />
+        <item itemvalue="Python.populate_user_rate" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb530e86-d860-40ed-90d4-99e718329563" name="Default Changelist" comment="" />
+      <created>1610034925240</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610034925240</updated>
+      <workItem from="1610034929933" duration="162000" />
+      <workItem from="1610793267791" duration="63000" />
+      <workItem from="1610891427741" duration="35000" />
+      <workItem from="1611333157070" duration="1046000" />
+      <workItem from="1611761497896" duration="8241000" />
+      <workItem from="1611814024488" duration="40204000" />
+      <workItem from="1612751715603" duration="257000" />
+      <workItem from="1615895606506" duration="835000" />
+      <workItem from="1616246229878" duration="3031000" />
+      <workItem from="1616565332466" duration="456000" />
+      <workItem from="1617261315178" duration="336000" />
+      <workItem from="1617261779349" duration="1070000" />
+      <workItem from="1617265127868" duration="58000" />
+      <workItem from="1618030022650" duration="4189000" />
+      <workItem from="1618037376880" duration="7803000" />
+      <workItem from="1618506410565" duration="355000" />
+      <workItem from="1618506785725" duration="1584000" />
+      <workItem from="1620586107249" duration="2593000" />
+      <workItem from="1620588883819" duration="90000" />
+      <workItem from="1620589266949" duration="7616000" />
+      <workItem from="1620804440216" duration="2786000" />
+      <workItem from="1620865983482" duration="3954000" />
+      <workItem from="1621351150251" duration="804000" />
+      <workItem from="1621560842959" duration="7767000" />
+      <workItem from="1621670173642" duration="4621000" />
+      <workItem from="1622029440789" duration="1228000" />
+      <workItem from="1622248596158" duration="2939000" />
+      <workItem from="1622426907744" duration="3625000" />
+      <workItem from="1622515081915" duration="2922000" />
+      <workItem from="1622536037624" duration="1073000" />
+      <workItem from="1622554314921" duration="166000" />
+      <workItem from="1622554496505" duration="345000" />
+      <workItem from="1622554858696" duration="20000" />
+      <workItem from="1622555033355" duration="1687000" />
+      <workItem from="1622600145064" duration="1249000" />
+      <workItem from="1622610154982" duration="327000" />
+      <workItem from="1622610495162" duration="185000" />
+      <workItem from="1622610695916" duration="171000" />
+      <workItem from="1622610884405" duration="109000" />
+      <workItem from="1622611068387" duration="3387000" />
+      <workItem from="1622684589627" duration="2715000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="391" y="75" key="#Inspections" timestamp="1620588399779">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="391" y="75" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1620588399779" />
+    <state x="293" y="99" width="1097" height="725" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620599333408">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="293" y="99" width="1097" height="725" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1620599333408" />
+    <state x="496" y="108" key="FileChooserDialogImpl" timestamp="1620599326972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="108" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620599326972" />
+    <state width="1483" height="170" key="GridCell.Tab.0.bottom" timestamp="1622627246703">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="170" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622627246703" />
+    <state width="1483" height="170" key="GridCell.Tab.0.center" timestamp="1622627246703">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="170" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622627246703" />
+    <state width="1483" height="170" key="GridCell.Tab.0.left" timestamp="1622627246703">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="170" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622627246703" />
+    <state width="1483" height="170" key="GridCell.Tab.0.right" timestamp="1622627246703">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1483" height="170" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622627246703" />
+    <state width="741" height="404" key="GridCell.Tab.1.bottom" timestamp="1622610994067">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="741" height="404" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622610994067" />
+    <state width="741" height="404" key="GridCell.Tab.1.center" timestamp="1622610994067">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="741" height="404" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622610994067" />
+    <state width="741" height="404" key="GridCell.Tab.1.left" timestamp="1622610994067">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="741" height="404" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622610994067" />
+    <state width="741" height="404" key="GridCell.Tab.1.right" timestamp="1622610994067">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="741" height="404" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622610994067" />
+    <state x="153" y="0" key="SettingsEditor" timestamp="1622698308765">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="153" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1622698308765" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/2021movie$manage.coverage" NAME="manage Coverage Results" MODIFIED="1622684719703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2021movie$Test__.coverage" NAME="Test:  Coverage Results" MODIFIED="1622611119084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/movie1$populate_user_rate.coverage" NAME="populate_user_rate Coverage Results" MODIFIED="1611818259669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/populate_data" />
+  </component>
+</project>

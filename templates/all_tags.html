@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="wrap-content">
+        <div class="movie">
+            <div class="row type">
+                <div class="title">
+                    <center><h2>电影分类</h2></center>
+                </div>
+            </div>
+            <div class="row">
+                {% for tag in all_tags %}
+                    <div class="col-1-4">
+                        <div class="wrap-col">
+                            <div class="post">
+                                <div class="view effect">
+                                    <div class="mask">
+                                        <a href="{% url 'one_tag' tag.id %}" class="info"></a>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <a href="{% url 'one_tag' tag.id %}"><h3>{{ tag.name }}</h3></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

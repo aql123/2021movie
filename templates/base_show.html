@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main_content %}
+    <table class="table">
+        <thead>
+        <tr>
+            {% block th_name %}
+            {% endblock %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in item %}
+            <div class="modal" id="confirm-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                                           <button type="button" class="btn btn-block btn-default" data-dismiss="modal">不确认</button>
+                            </div>
+                            <div class="col-md-6">
+                                   {% block modal %}
+                            {% endblock %}
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+{#                </div>#}
+            </div>
+            <tr>
+                {% block th_value %}
+                {% endblock %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+{% endblock %}
+

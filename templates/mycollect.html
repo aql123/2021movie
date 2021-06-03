@@ -1,0 +1,21 @@
+{% extends "base_show.html" %}
+{% block th_name %}
+    <th>电影名</th>
+    <th>导演</th>
+    <th>标签</th>
+    <th>查看</th>
+{% endblock %}
+{% block th_value %}
+    <td><a href="{% url 'movie' i.id %}"> {{ i.name }}</a></td>
+    <td><a href="{% url 'director_movie' i.director %}">{{ i.director }}</a></td>
+    <td> {% if i.tags.all %}
+        {% for tag in i.tags.all %}
+            <a href="{% url 'one_tag' tag.id %}">{{ tag }}</a>
+        {% endfor %}
+    {% else %}
+        无
+    {% endif %}
+    </td>
+    <td><a class="btn btn-success" href="{% url 'movie' i.id %}">查看</a></td>
+{% endblock %}
+

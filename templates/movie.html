@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% load grav_tag %}
+{% load is_like %}
+{% block main_content %}
+    <div class="wrap-content">
+        <article>
+            <div class="art-header">
+                <div class="row">
+                    <div class="col-md-3 " style="margin-bottom: 10px ;margin-top: 10px">
+                        <img src="{{ MEDIA_URL }}{{ movie.image_link }}"/>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="wrap-col" style="overflow: auto">
+                            <ul class="movie-info" style="overflow: auto">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>电影名: <a href="#">{{ movie.name }}</a></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>上映日期: <a href="#">{{ movie.years }}</a></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>导演: <a href="#">{{ movie.director }}</a></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>主演: <a href="#">{{ movie.leader |slice:30 }}...</a></p>
+                                    </div>
+                                </div>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-1-3">
+                                            <a target="_blank" style="display: inline-block; margin-left: 15px" class="btn-lg btn-success" href="https://www.idybee.com/?post_type=post&s={{ movie.name }}">前往观看</a>
+                                        </div>
+                                        <div class="col-1-3">
+                                            {% if is_collect %}
+                                                <a class="btn-lg btn-warning" style="display: inline-block" href="{% url 'decollect' movie.id %}">取消收藏</a>
+                                            {% else %}
+                                                <a class="btn-lg btn-primary" style="display: inline-block" href="{% url 'collect' movie.id %}">点击收藏</a>{% endif %}
+                                        </div>
+                                        <div class="col-1-3">
+                                            <h2 style="display: inline"> 收藏人数:{{ movie.collect.count }} </h2>
+                                        </div>
+                                        {#                                            <a style="display: inline-block" class="btn-lg btn-primary" href="{% url 'collect' movie.id %}">收藏</a>#}
+                                    </div>
+                                <li>
+                                </li>
+                                <li style="margin-top: 20px"><p style="display: inline-block; margin-right: 15px">豆瓣评分: <a href="#">{{ movie.d_rate }}</a></p>
+                                    <p style="display: inline-block">标签： {% for tag in movie.tags.all %}  <a href="{% url 'one_tag' tag.id %}">{{ tag.name }}</a>{% endfor %}</p>
+                                </li>
+                                <li style="margin-top: 20px">
+                                    {% if user_rate is not None %}
+                                        <h4>您已经进行打分: {{ user_rate.mark }}</h4>
+                                    {% else %}
+                                        <form action="{% url 'score' movie.id %}" method="post">
+                                            {% csrf_token %}
+                                            <p style="display: inline-block;"> 添加评分</p>
+                                            <select name="score">
+                                                <option>1.0</option>
+                                                <option>2.0</option>
+                                                <option>3.0</option>
+                                                <option>4.0</option>
+                                                <option>5.0</option>
+                                            </select>
+                                            <button type="submit" class="button bt1">提交</button>
+                                        </form>
+                                    {% endif %}
+                                </li>
+                                                            <div class="clear"></div>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="clear"></div>
+            <div class="art-content">
+                                <div class="clear"></div>
+                <p>{{ movie.intro }}</p>
+                <div class="clear"></div>
+            </div>
+        </article>
+        <div class="widget wid-related">
+            <div class="wid-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h5>基于物品推荐</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="button bt1" onclick="get_item_recommend()">换一批</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wid-content">
+                <div class="row" id="item-recommend">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="row">
+            <div class="col-md-9">
+                <form role="form" action="{% url 'comment' movie.id %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input placeholder="快来说说点什么吧" class="form-control" name="comment" cols="10" rows="10">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" style="float: right;" class="btn-lg btn-success">提交评论</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <h2 style="border-bottom: dashed #fcab2b 1px; padding-bottom: 10px">评论</h2>
+                    <div class="item-list">
+                        <ul>
+                            {% for i in comments %}
+                                <li class="list-item">
+                                    <div class="avartar">
+                                        <a><img src='{{ request.user.email|gravatar:"75" }}'> </a>
+                                    </div>
+                                    <div class="list-info">
+                                        <p>{{ i.content }}</p>
+                                        {{ i.user.username }} 发表于{{ i.create_time }} 推荐
+                                    </div>
+                                    {#                                    {% if  i.user | is_like:i.user.id %}#}
+                                    {#                                        <a href="{% url 'unlike_comment' i.id movie.id %}" class="recommend-link"><span class="fa fa-lg fa-thumbs-up"#}
+                                    {#                                    {% else %}#}
+                                    <a href="{% url 'like_comment' i.id movie.id %}" class="recommend-link"><span class="fa fa-lg fa-thumbs-up">({{ i.likecomment_set.count }})</span></a>
+                                    {#                                    {% endif %}#}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script>
+        function get_item_recommend() {
+            $.ajax({
+                url: '/item_recommend/',
+                type: 'GET',
+                success: function (result) {
+                    var html = "";
+                    var array_length = result.length;
+                    for (var i = 0; i < array_length; i++) {
+                        html += `<div class="col-1-3"><div class="wrap-col">` +
+                            `<a href="/movie/${result[i].id}"><img src="${result[i].image_link}"/></a>` +
+                            `<a href="/movie/${result[i].id}"><h4>${result[i].name}</h4></a></div></div>`;
+                    }
+                    $('#item-recommend').html(html);
+                },
+                fail: function (xhr, textStatus, errorThrown) {
+                    alert('request failed');
+                },
+                error: function (jqXHR, exception) {
+                    console.log(jqXHR.status);
+                    console.log(exception);
+                }
+            });
+        }
+
+        get_item_recommend();
+    </script>
+
+
+{% endblock %}

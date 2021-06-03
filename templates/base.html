@@ -1,0 +1,189 @@
+{#{% load grav_tag %}#}
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>推荐系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="wrap-body">
+    <header>
+        <div class="wrap-header zerogrid">
+            <div class="row">
+                <div class="col-1-2">
+                    <div class="wrap-col">
+                        <div class="logo" style="font-size: 33px;padding: 16px 0;font-family: sans-serif; ">
+                            <a href="/"> 电影推荐系统</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-2">
+                    <div class="wrap-col f-right">
+                        <form method="post" action="{% url 'search' %}" id="search">
+                            {% csrf_token %}
+                            <input name="search" type="text" size="40" placeholder="搜索..."/>
+                            <input type="submit" value="提交">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="menu">
+                    <nav>
+                        <div class="wrap-nav">
+                            <ul>
+                                <li class="active"><a href= {% url 'index' %}>首页</a></li>
+                                <li class="active"><a href= {% url 'all_tags' %}>标签</a></li>
+                                {% if request.session.login_in == True %}
+                                    <li><a href="{% url 'personal' %}">{{ request.session.name }}</a></li>
+                                    <li><a href="{% url 'logout' %}">退出登录</a></li>
+                                {% else %}
+                                    {{ request.session.login_in }}
+                                    <li class="active"><a href= {% url 'login' %}>登录</a></li>
+                                    <li class="active"><a href= {% url 'register' %}>注册</a></li>
+                                    {#                                    <li><a href="{% url 'clear_cache' %}">清除缓存</a></li>#}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--////////////////////////////////////Container-->
+    <section id="container">
+        <div class="wrap-container zerogrid">
+            <div id="main-content" class="col-2-3">
+                {% block main_content %}
+                {% endblock %}
+            </div>
+            <div id="sidebar" class="col-1-3">
+                <div class="wrap-sidebar">
+                    <!---- Start Widget ---->
+                    <div class="widget wid-new-updates">
+                        <div class="wid-header">
+                            <h5>最近更新</h5>
+                        </div>
+                        <div class="wid-content">
+                            <ul id="latest-movie">
+                                {% for movie in new_list %}
+                                    <li><a href="{% url 'movie' movie.id %}">{{ movie.name }}</a><span><img src="/static/images/hot.png"/></span></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!---- Start Widget ---->
+                    <div class="widget wid-last-updates">
+                        <div class="wid-header">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h5> 基于用户推荐电影</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <a style="color: white" onclick="get_user_recommend()" href="#" class="btn btn-warning">换一批</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid-content" id="user-recommend">
+                            {% for movie in user_recommend_list %}
+                                <div class="post">
+                                    <a href="{% url 'movie' movie.id %}"><img src="{{ MEDIA_URL }}{{ movie.image_link }}"/></a>
+                                    <div class="wrapper">
+                                        <a href="{% url 'movie' movie.id %}"><h6>{{ movie.name }}</h6></a>
+                                        <p>{{ movie.years }}</p>
+                                        <a href="{% url 'movie' movie.id %}">评分{{ movie.rate }}</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--////////////////////////////////////Footer-->
+    <footer>
+        <div class="bottom-footer">
+            <div class="wrap-bottom ">
+                <div class="copyright">
+{#                    <p>©2020 <a href="http://www.colaplusice.com/" target="_blank">Colaplusice</a>电影推荐系统</p>#}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+<script src="{% static 'js/jquery-2.1.1.min.js' %}"></script>
+<script src="{% static "/js/bootstrap.min.js" %}"></script>
+{#<script src="{% static 'js/css3-mediaqueries.js' %}"></script>#}
+{% block bottom-js %}
+{% endblock %}
+<script>
+    function get_user_recommend() {
+        $.ajax({
+            url: '/user_recommend/',
+            type: 'GET',
+            success: function (result) {
+                var html = "";
+                var array_length = result.length;
+                for (var i = 0; i < array_length; i++) {
+                    html += `<div class="post">\n` +
+                        `<a href="/movie/${result[i].id}"><img src="${result[i].image_link}"/></a>` +
+                        `<div class="wrapper"><a href="/movie/${result[i].id}"><h6>${result[i].name}</h6></a>`
+                        + `<p> ${result[i].years}</p>`
+                        + `<a href="/movie/${result[i].id}">评分${result[i].d_rate}</a>\n</div>`
+                    ;
+                }
+                $('#user-recommend').html(html);
+                {#console.log(html);#}
+            },
+            fail: function (xhr, textStatus, errorThrown) {
+                alert('request failed');
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR.status);
+                console.log(exception);
+            }
+        });
+    }
+
+    get_user_recommend();
+
+    function get_latest_movie() {
+        $.ajax({
+            url: '/latest_movie/',
+            type: 'GET',
+            success: function (result) {
+                var html = "";
+                var array_length = result.length;
+                for (var i = 0; i < array_length; i++) {
+                    html += `<li><a href="/movie/${result[i].id}">${result[i].name}</a><span><img src="/static/images/hot.png"/></span></li>`;
+                }
+                $('#latest-movie').html(html);
+            },
+            fail: function (xhr, textStatus, errorThrown) {
+                alert('request failed');
+            },
+            error: function (jqXHR, exception) {
+                console.log(jqXHR.status);
+                console.log(exception);
+            }
+        });
+    }
+
+    get_latest_movie();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="23">
+            <item index="0" class="java.lang.String" itemvalue="tqdm" />
+            <item index="1" class="java.lang.String" itemvalue="six" />
+            <item index="2" class="java.lang.String" itemvalue="django-ckeditor" />
+            <item index="3" class="java.lang.String" itemvalue="django-crispy-forms" />
+            <item index="4" class="java.lang.String" itemvalue="httplib2" />
+            <item index="5" class="java.lang.String" itemvalue="django-rest-swagger" />
+            <item index="6" class="java.lang.String" itemvalue="django-simple-captcha" />
+            <item index="7" class="java.lang.String" itemvalue="numpy" />
+            <item index="8" class="java.lang.String" itemvalue="requests" />
+            <item index="9" class="java.lang.String" itemvalue="django-pure-pagination" />
+            <item index="10" class="java.lang.String" itemvalue="django-filter" />
+            <item index="11" class="java.lang.String" itemvalue="Django" />
+            <item index="12" class="java.lang.String" itemvalue="future" />
+            <item index="13" class="java.lang.String" itemvalue="django-js-asset" />
+            <item index="14" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="15" class="java.lang.String" itemvalue="olefile" />
+            <item index="16" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="17" class="java.lang.String" itemvalue="pytz" />
+            <item index="18" class="java.lang.String" itemvalue="djangorestframework" />
+            <item index="19" class="java.lang.String" itemvalue="Markdown" />
+            <item index="20" class="java.lang.String" itemvalue="django-formtools" />
+            <item index="21" class="java.lang.String" itemvalue="Pillow" />
+            <item index="22" class="java.lang.String" itemvalue="django" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="" />
+          <option value="populate_data.remove_extra_image.user" />
+          <option value="movie_it.douban_crawler.crawler_utils" />
+          <option value="movie.data.Film" />
+          <option value="movie.data.Genres" />
+          <option value="movie.forms.Edit.Meta.cleaned_data" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

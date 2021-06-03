@@ -1,0 +1,86 @@
+.movie-info li {
+    margin-top: 15px;
+
+}
+
+#confirm-modal >*{
+    color: black;
+!important;
+}
+
+.modal-dialog{
+    width: 300px;
+}
+
+
+
+footer {
+    margin-top: 40px;
+}
+
+.a {
+    color: #fcab2b;
+}
+
+a .btn {
+    color: white;
+!important;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.bg-yellow > * {
+    color: #fcab2b;
+!important;
+}
+
+.avartar img {
+    width: 70px;
+    margin-right: 10px;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+}
+
+.avartar img:hover {
+    border: 1px solid red;
+}
+
+.item-list ul {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.item-list .title {
+    padding-top: 0;
+    margin-top: -10px;
+    color: #3b5998;
+    font-size: 22px;
+}
+
+.item-list li {
+    border-bottom: dashed 1px #a5a5a5;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.item-list a {
+    margin-right: 20px;
+}
+
+.item-list .blog-meta {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.item-list .recommend-link {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
